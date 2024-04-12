@@ -2,7 +2,9 @@
   "name": "@angular-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "npx nx run host:serve --devRemotes=app1,app2 --watch=true"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.3.0",
