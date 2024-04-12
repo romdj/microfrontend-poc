@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, timer } from 'rxjs';
+import { Observable, map, of, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  name = 'Oleksii Filippov';
-
-  generateRandomNumber(): Observable<number> {
-    // Emit a new random number every second
-    return timer(0, 1000).pipe(map(() => Math.floor(Math.random() * 101)));
-  }
+  name = 'Oleksii Filippov' + Math.floor(Math.random() * 101);
 }

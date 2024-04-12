@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   imports: [NxWelcomeComponent, RouterModule, CommonModule],
-  providers: [AuthService],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -15,8 +14,6 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'host';
   name = this.authService.name;
-
-  randomNumber$ = this.authService.generateRandomNumber();
 
   constructor(private authService: AuthService) {}
 }

@@ -5,7 +5,6 @@ import { AuthService } from '@angular-monorepo/auth';
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  providers: [AuthService],
   imports: [CommonModule],
   template: `
     <!--
@@ -434,7 +433,7 @@ import { AuthService } from '@angular-monorepo/auth';
         <div id="welcome">
           <h1>
             <span> Hello {{ name }}, </span>
-            Welcome to app2 👋 Shared state: {{ randomNumber$ | async }}
+            Welcome to app2
           </h1>
         </div>
         <!--  HERO  -->
@@ -908,7 +907,6 @@ nx affected:e2e</pre>
 })
 export class NxWelcomeComponent {
   name = this.authService.name;
-  randomNumber$ = this.authService.generateRandomNumber();
 
   constructor(private authService: AuthService) {}
 }
