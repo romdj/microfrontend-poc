@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '@angular-monorepo/auth';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
   imports: [CommonModule],
+  providers: [AuthService],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -431,8 +433,8 @@ import { CommonModule } from '@angular/common';
         <!--  WELCOME  -->
         <div id="welcome">
           <h1>
-            <span> Hello there, </span>
-            Welcome app1 👋
+            <span> Hello {{ name }}, </span>
+            Welcome to app1 👋 Shared state: {{ randomNumber$ | async }}
           </h1>
         </div>
         <!--  HERO  -->
@@ -904,4 +906,9 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent {
+  name = this.authService.name;
+  randomNumber$ = this.authService.generateRandomNumber();
+
+  constructor(private authService: AuthService) {}
+}
