@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { DialogOverviewExampleDialogComponent } from './components/login/login.component';
 import { MatDialog } from '@angular/material/dialog';
-
 @Component({
   standalone: true,
   imports: [
