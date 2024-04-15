@@ -5,5 +5,5 @@ import { Observable, map, of, timer } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  name = 'Oleksii Filippov' + Math.floor(Math.random() * 101);
+  name = 'Romain Lussier' + Math.floor(Math.random() * 101);
 }
