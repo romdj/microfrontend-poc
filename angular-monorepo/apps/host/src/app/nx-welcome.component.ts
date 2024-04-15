@@ -1,11 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -87,7 +86,6 @@ import { MatCardModule } from '@angular/material/card';
       .container {
         margin-left: auto;
         margin-right: auto;
-        max-width: 768px;
         padding-bottom: 3rem;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -176,6 +174,7 @@ import { MatCardModule } from '@angular/material/card';
         line-height: 1.75rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        color: red;
       }
       .list-item-link {
         align-items: center;
@@ -230,8 +229,8 @@ import { MatCardModule } from '@angular/material/card';
         width: 1rem;
       }
       .list-item-link:hover {
-        color: rgba(255, 255, 255, 1);
-        background-color: hsla(162, 47%, 50%, 1);
+        color: white;
+        background-color: red;
       }
       .list-item-link:hover > span {
       }
@@ -242,6 +241,9 @@ import { MatCardModule } from '@angular/material/card';
         transform: translateX(0.25rem);
       }
       #other-links {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        display: grid;
       }
       .button-pill {
         padding: 1.5rem 2rem;
@@ -287,9 +289,7 @@ import { MatCardModule } from '@angular/material/card';
       .nx-console svg {
         color: rgba(0, 122, 204, 1);
       }
-      .nx-console-jetbrains {
-        margin-top: 2rem;
-      }
+
       .nx-console-jetbrains:hover {
         background-color: rgba(255, 49, 140, 1);
       }
@@ -303,8 +303,6 @@ import { MatCardModule } from '@angular/material/card';
         color: rgba(24, 23, 23, 1);
       }
       #nx-cloud {
-        margin-bottom: 2rem;
-        margin-top: 2rem;
         padding: 2.5rem 2rem;
       }
       #nx-cloud > div {
@@ -317,24 +315,30 @@ import { MatCardModule } from '@angular/material/card';
         width: 3rem;
       }
       #nx-cloud > div h2 {
-        font-size: 1.125rem;
+        font-size: 1.6rem;
         font-weight: 400;
         letter-spacing: -0.025em;
         line-height: 1.75rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        color: red;
       }
-      #nx-cloud > div h2 span {
-        display: block;
-        font-size: 0.875rem;
-        font-weight: 300;
-        line-height: 1.25rem;
+
+      .info-sections h3 {
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 1.75rem;
+        color: red;
       }
+
       #nx-cloud p {
         font-size: 1rem;
         line-height: 1.5rem;
         margin-top: 1rem;
       }
+
+      #nx-cloud .info-sections p {
+        font-size: 0.85rem;
+      }
+
       #nx-cloud pre {
         margin-top: 1rem;
       }
@@ -415,26 +419,206 @@ import { MatCardModule } from '@angular/material/card';
         display: inline;
         margin-top: -0.25rem;
       }
+
+      .info-sections div {
+        margin: 15px;
+      }
       @media screen and (min-width: 768px) {
         #hero {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          display: grid;
+          grid-template-columns: auto auto auto;
         }
         #hero .logo-container {
           display: flex;
         }
         #middle-content {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
       }
     </style>
     <div class="wrapper">
       <div class="container">
-        <mat-card>
-          <mat-card-content>Simple card</mat-card-content>
-        </mat-card>
-        <mat-card>
-          <mat-card-content>Simple card</mat-card-content>
-        </mat-card>
+        <!--  MIDDLE CONTENT  -->
+        <!-- 
+            Werkloosheldsdossler
+            Recent info
+            My inbox
+            Fiscale fiches
+            Info
+        -->
+        <div id="middle-content">
+          <div id="learning-materials" class="rounded shadow">
+            <h2>Werkloosheldsdossler</h2>
+            <a
+              href="https://nx.dev/getting-started/intro?utm_source=nx-project"
+              target="_blank"
+              rel="noreferrer"
+              class="list-item-link"
+            >
+              <span> Recent info </span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://nx.dev/getting-started/intro?utm_source=nx-project"
+              target="_blank"
+              rel="noreferrer"
+              class="list-item-link"
+            >
+              <span> Fiscale fiches </span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://nx.dev/getting-started/intro?utm_source=nx-project"
+              target="_blank"
+              rel="noreferrer"
+              class="list-item-link"
+            >
+              <span> Recent info </span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://blog.nrwl.io/?utm_source=nx-project"
+              target="_blank"
+              rel="noreferrer"
+              class="list-item-link"
+            >
+              <span>My inbox </span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@NxDevtools/videos?utm_source=nx-project&sub_confirmation=1"
+              target="_blank"
+              rel="noreferrer"
+              class="list-item-link"
+            >
+              <span> Fiscale fichesa </span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+          <div id="other-links">
+            <div id="nx-cloud" class="rounded shadow">
+              <div>
+                <h2>Recente Info</h2>
+              </div>
+              <p>
+                User info typically includes personal details such as name, age,
+                location, occupation, interests, and sometimes more specific
+                data depending on the context. It's important to handle and
+                store this information securely and responsibly, ensuring the
+                user's privacy and confidentiality are respected. When
+                collecting user info, transparency about how it will be used and
+                shared is essential for establishing trust between the user and
+                the service provider. User info typically includes personal
+                details such as name, age, location, occupation, interests, and
+                sometimes more specific data depending on the context. It's
+                important to handle and store this information securely and
+                responsibly, ensuring the user's privacy and confidentiality are
+                respected. When collecting user info, transparency about how it
+                will be used and shared is essential for establishing trust
+                between the user and the service provider.
+              </p>
+              <div class="info-sections">
+                <div>
+                  <h3>Section #1</h3>
+                  <p>
+                    User info typically includes personal details such as name,
+                    age, location, occupation, interests, and sometimes more
+                    specific data depending on the context. It's important to
+                    handle and store this information securely and responsibly,
+                    ensuring the user's privacy and confidentiality are
+                    respected.
+                  </p>
+                </div>
+                <div>
+                  <h3>Section #2</h3>
+                  <p>
+                    User info typically includes personal details such as name,
+                    age, location, occupation, interests, and sometimes more
+                    specific data depending on the context. It's important to
+                    handle and store this information securely and responsibly,
+                    ensuring the user's privacy and confidentiality are
+                    respected.
+                  </p>
+                </div>
+                <div>
+                  <h3>Section #3</h3>
+                  <p>
+                    User info typically includes personal details such as name,
+                    age, location, occupation, interests, and sometimes more
+                    specific data depending on the context. It's important to
+                    handle and store this information securely and responsibly,
+                    ensuring the user's privacy and confidentiality are
+                    respected.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  COMMANDS  -->
       </div>
     </div>
   `,
