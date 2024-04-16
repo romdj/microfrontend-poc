@@ -1,0 +1,14 @@
+/* language-selector.component.css */
+.language-selector {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  select {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
